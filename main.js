@@ -1,0 +1,2 @@
+console.log("Kesimpulan menejemen keuangan");
+document.write('p>Menejemen keuangan adalah proses perencanaan, pengorganisasian, pengarahan, dan pengendalian sumber daya keuangan untuk mencapai tujuan organisasi secara efektif dan efisien. Tujuan utama menejemen keuangan meliputi memastikan ketersediaan dana yang cukup, mengoptimalkan penggunaan dana, meminimalkan risiko keuangan, dan meningkatkan nilai perusahaan bagi pemegang saham.</p>');
