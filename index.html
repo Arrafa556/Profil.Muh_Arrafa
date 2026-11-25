@@ -1,12 +1,250 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profil Muh Arrafa</title>
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rawat Bumi Dan Halaman Lingkungan Hidup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+  --bg: #f1f5ef;
+  --surface: #ffffff;
+  --ink: #14261f;
+  --muted: #4c6157;
+  --line: #d3ded3;
+  --moss: #2d6a4f;
+  --leaf: #7fb069;
+  --water: #3b8ea5;
+  --sky: #d9ecee;
+  --sun: #f2b84b;
+  --hill-1: #a9d18e;
+  --hill-2: #6fae75;
+  --hill-3: #2d6a4f;
+  --head: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1a15; --surface: #16251e; --ink: #e8f0e9; --muted: #9db3a6;
+    --line: #2a3d33; --moss: #7fb069; --leaf: #7fb069; --water: #6cc0d6;
+    --sky: #14313a; --sun: #f2b84b;
+    --hill-1: #2f5a40; --hill-2: #23463a; --hill-3: #17332a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1a15; --surface: #16251e; --ink: #e8f0e9; --muted: #9db3a6;
+  --line: #2a3d33; --moss: #7fb069; --leaf: #7fb069; --water: #6cc0d6;
+  --sky: #14313a; --sun: #f2b84b;
+  --hill-1: #2f5a40; --hill-2: #23463a; --hill-3: #17332a;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+h1, h2, h3 { font-family: var(--head); line-height: 1.1; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--water); outline-offset: 3px; }
+
+.wrap { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+
+/* Navigasi */
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; flex-wrap: wrap; }
+.brand { font-family: var(--head); font-weight: 700; font-size: 1.25rem; text-decoration: none; }
+.nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+.nav ul a { text-decoration: none; color: var(--muted); font-weight: 500; }
+.nav ul a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding: 3rem 0 0; }
+.hero h1 { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 700; max-width: 14ch; }
+.hero p.lead { margin-top: 1.5rem; max-width: 52ch; color: var(--muted); font-size: 1.2rem; }
+.btns { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 0.8rem 1.4rem; border-radius: 0.5rem;
+  font-weight: 500; text-decoration: none; border: 2px solid var(--moss);
+}
+.btn.utama { background: var(--moss); color: #fff; }
+.btn.sekunder { color: var(--ink); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn.utama { color: #0f1a15; }
+}
+:root[data-theme="dark"] .btn.utama { color: #0f1a15; }
+
+/* Lanskap CSS murni */
+.lanskap {
+  position: relative; height: clamp(200px, 32vw, 340px);
+  margin-top: 3rem; overflow: hidden; background: var(--sky);
+}
+.matahari {
+  position: absolute; width: clamp(70px, 12vw, 120px); aspect-ratio: 1;
+  border-radius: 50%; background: var(--sun); top: 14%; right: 14%;
+}
+.bukit { position: absolute; left: -10%; width: 120%; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.bukit.b1 { height: 70%; bottom: 0; background: var(--hill-1); left: -30%; width: 90%; }
+.bukit.b2 { height: 58%; bottom: 0; background: var(--hill-2); left: 20%; width: 100%; }
+.bukit.b3 { height: 38%; bottom: 0; background: var(--hill-3); left: -15%; width: 130%; }
+.sungai {
+  position: absolute; bottom: 0; left: 38%; width: 14%; height: 36%;
+  background: var(--water); border-radius: 50% 50% 0 0 / 100% 100% 0 0; opacity: 0.9;
+}
+
+/* Section umum */
+section { padding: 4.5rem 0; }
+.judul { font-size: clamp(1.75rem, 4vw, 2.75rem); max-width: 20ch; }
+.pengantar { margin-top: 1rem; max-width: 56ch; color: var(--muted); }
+
+/* Kondisi */
+.kondisi { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 2.5rem; margin-top: 2.5rem; }
+.kondisi h3 { font-size: 1.35rem; padding-top: 1rem; border-top: 4px solid var(--water); }
+.kondisi article:nth-child(1) h3 { border-color: var(--leaf); }
+.kondisi article:nth-child(3) h3 { border-color: var(--sun); }
+.kondisi p { margin-top: 0.6rem; color: var(--muted); max-width: 40ch; }
+
+/* Aksi */
+.aksi { background: var(--surface); border-block: 1px solid var(--line); }
+.cek { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; gap: 0.5rem; max-width: 44rem; }
+.cek label { display: flex; gap: 0.9rem; align-items: flex-start; padding: 0.9rem 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+.cek input { width: 1.4rem; height: 1.4rem; margin-top: 0.2rem; accent-color: var(--moss); flex: none; }
+.cek strong { display: block; font-family: var(--head); font-size: 1.15rem; }
+.cek span { color: var(--muted); }
+.cek input:checked + div { opacity: 0.55; }
+.cek input:checked + div strong { text-decoration: line-through; text-decoration-thickness: 2px; }
+
+/* Kontak */
+.ajakan { display: grid; gap: 1.5rem; max-width: 40rem; }
+.ajakan p { color: var(--muted); }
+
+footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; border-top: 1px solid var(--line); }
+
+@media (max-width: 40rem) {
+  .nav ul { gap: 1rem; }
+  section { padding: 3.25rem 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</html>
 <body>
-  <h1>Muh Arrafa</h1>
-  <p>Software Developer · Yogyakarta</p>
+
+  <header class="wrap">
+  <nav class="nav" aria-label="Navigasi utama">
+    <a class="brand" href="#atas">Rawat Bumi Dan Lingkungan</a>
+    <ul>
+      <li><a href="#kondisi">Kondisi</a></li>
+      <li><a href="#aksi">Aksi</a></li>
+      <li><a href="#gabung">Cara</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="atas">
+  <div class="hero wrap">
+    <h1>bumi dan Lignkungan butuh banyak orang yang mulai, bukan satu yang sempurna.</h1>
+    <p class="lead">Bergerak Untuk Menyelamatkan lingkungan Dan Bumi , komunitas, atau proyek lingkungan. Bergerak Untuk Hidup Sehat.</p>
+    <div class="btns">
+      <a class="btn utama" href="#aksi">Mulai dari rumah</a>
+      <a class="btn sekunder" href="#kondisi">Lihat kondisinya</a>
+    </div>
+  </div>
+
+  <div class="lanskap" role="img" aria-label="Ilustrasi bukit hijau, sungai, dan matahari">
+    <div class="matahari"></div>
+    <div class="bukit b1"></div>
+    <div class="bukit b2"></div>
+    <div class="bukit b3"></div>
+    <div class="sungai"></div>
+  </div>
+
+  <section id="kondisi">
+    <div class="wrap">
+      <h2 class="judul">Tiga hal yang paling dekat dengan kita</h2>
+      <p class="pengantar">Rumah Kotor Halaman Tidak Bersih.</p>
+      <div class="kondisi">
+        <article>
+          <h3>Sampah</h3>
+          <p>Sampah plastik sekali pakai menumpuk di sungai dan laut. Di Darah Ku Sampah Di bakar atau Dikumpulin.</p>
+        </article>
+        <article>
+          <h3>Air</h3>
+          <p>Sungai dan air tanah dipakai bersama. Di kebanyakan daerah Satu Sumur bisa di pakai bersama Dan menimbulkan air yang tidak Bersih.</p>
+        </article>
+        <article>
+          <h3>Udara</h3>
+          <p>Asap kendaraan dan pembakaran terbuka memengaruhi kesehatan. Udara Tidak bersih dan jadi kotor akibat polusi.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="aksi" class="aksi">
+    <div class="wrap">
+      <h2 class="judul">Lima aksi kecil untuk minggu ini</h2>
+      <p class="pengantar">Centang yang sudah kamu lakukan.</p>
+      <ul class="cek">
+        <li>
+          <label>
+            <input type="checkbox">
+            <div><strong>Bawa tas dan botol minum sendiri</strong><span>Kurangi plastik sekali pakai setiap hari.</span></div>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            <div><strong>Pilah sampah organik dan anorganik</strong><span>Dua wadah di dapur sudah cukup untuk memulai.</span></div>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            <div><strong>Bersikan rumah</strong><span>Beres-Beres Rumah menjadi hal yang patut di contoh .</span></div>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            <div><strong>kelola Sampah</strong><span>Kelola dan Memilih sampah organik , nom organik dan B3.</span></div>
+          </label>
+        </li>
+        <li>
+          <label>
+            <input type="checkbox">
+            <div><strong>Tanam satu tanaman</strong><span>Di pot, di halaman, Agar Enak di lihat .</span></div>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="gabung">
+    <div class="wrap ajakan">
+      <h2 class="judul">Gabung kegiatan bersih-bersih berikutnya</h2>
+      <p>Sehat pilihan Terbaik, gunungkidul, dan cara mendaftar di sini. Lingkungan bersih , tubuh pun ikut bersih.</p>
+      <div class="btns">
+        <a class="btn utama" href="#atas">Daftar sekarang</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Rawat Bumi. Eduherst2026.</div>
+</footer>
+
 </body>
 </html>
+
